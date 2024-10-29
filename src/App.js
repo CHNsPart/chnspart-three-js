@@ -34,6 +34,7 @@ export default function App() {
             maxDepthThreshold={1.4}
             color="#202020"
             metalness={0.8}
+            mirror={0.75}
           />
         </mesh>
         {/* Bunny and a light give it more realism */}
@@ -55,7 +56,6 @@ export default function App() {
 
 function Bun(props) {
   const { nodes } = useGLTF(suspend(suzi).default)
-  console.log(nodes)
   return (
     <mesh receiveShadow castShadow geometry={nodes.mesh.geometry} {...props}>
       <meshStandardMaterial color="#222" roughness={0.5} />
